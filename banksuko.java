@@ -66,8 +66,38 @@ public class banksuko {
             }
         }
     }
+    private static void crearCuenta() {
+        System.out.print("Ingrese un nombre de usuario para su nueva cuenta: ");
+        String nuevoUsuario = scanner.next();
 
+        if (cuentas.containsKey(nuevoUsuario)) {
+            System.out.println("Este nombre de usuario ya esta en uso. Por favor, ingrese un nombre diferente.");
+        } else {
+            System.out.print("Ingrese una contraseña: ");
+            String contraseña = scanner.next();
+            cuentas.put(nuevoUsuario, contraseña);
+            saldos.put(nuevoUsuario, 0.0); // Inicialmente, la cuenta se crea con saldo 0.
+            System.out.println("Cuenta creada con exito. Ahora ya puede iniciar sesion.");
+        }
+    }
+    private static void iniciarSesion() {
+        System.out.print("Ingrese su nombre de usuario: ");
+        String usuario = scanner.next();
 
+        if (cuentas.containsKey(usuario)) {
+            System.out.print("Ingrese su contraseña: ");
+            String contraseña = scanner.next();
+
+            if (cuentas.get(usuario).equals(contraseña)) {
+                usuarioActual = usuario;
+                System.out.println("Inicio de sesion exitoso. Bienvenido a Bankzuco, " + usuarioActual + "!");
+            } else {
+                System.out.println("Contraseña incorrecta. Por favor, inténtelo de nuevo.");
+            }
+        } else {
+            System.out.println("Nombre de usuario no encontrado, ingrese un nombre de ususario valido o registrese antes de iniciar sesion.");
+        }
+    }
     private static void verSaldo() {
         System.out.println("Saldo actual de " + usuarioActual + ": $" + saldos.get(usuarioActual));
     }
