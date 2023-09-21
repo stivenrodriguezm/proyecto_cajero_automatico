@@ -26,7 +26,6 @@ public class banksuko {
                 System.out.println("3. Depositar dinero");
                 System.out.println("4. Cerrar sesion");
             }
-
             System.out.print("Seleccione una opcion: ");
 
             int opcion = scanner.nextInt();
