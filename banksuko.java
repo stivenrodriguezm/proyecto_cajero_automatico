@@ -87,7 +87,6 @@ public class banksuko {
         if (cuentas.containsKey(usuario)) {
             System.out.print("Ingrese su contraseña: ");
             String contraseña = scanner.next();
-
             if (cuentas.get(usuario).equals(contraseña)) {
                 usuarioActual = usuario;
                 System.out.println("Inicio de sesion exitoso. Bienvenido a Bankzuco, " + usuarioActual + "!");
@@ -101,7 +100,6 @@ public class banksuko {
     private static void verSaldo() {
         System.out.println("Saldo actual de " + usuarioActual + ": $" + saldos.get(usuarioActual));
     }
-
     private static void retirarDinero() {
         System.out.print("Ingrese la cantidad que desea retirar: $");
         double cantidad = scanner.nextDouble();
@@ -113,7 +111,6 @@ public class banksuko {
             System.out.println("Retiro $" + cantidad + ". Saldo actual: $" + saldos.get(usuarioActual));
         }
     }
-
     private static void depositarDinero() {
         System.out.print("Ingrese la cantidad que desea depositar: $");
         double cantidad = scanner.nextDouble();
