@@ -67,4 +67,33 @@ public class banksuko {
         }
     }
 
+
+    private static void verSaldo() {
+        System.out.println("Saldo actual de " + usuarioActual + ": $" + saldos.get(usuarioActual));
+    }
+
+    private static void retirarDinero() {
+        System.out.print("Ingrese la cantidad que desea retirar: $");
+        double cantidad = scanner.nextDouble();
+
+        if (cantidad > saldos.get(usuarioActual)) {
+            System.out.println("No tiene saldo suficiente para realizar esta operacion.");
+        } else {
+            saldos.put(usuarioActual, saldos.get(usuarioActual) - cantidad);
+            System.out.println("Retiro $" + cantidad + ". Saldo actual: $" + saldos.get(usuarioActual));
+        }
+    }
+
+    private static void depositarDinero() {
+        System.out.print("Ingrese la cantidad que desea depositar: $");
+        double cantidad = scanner.nextDouble();
+
+        if (cantidad <= 0) {
+            System.out.println("La cantidad debe ser mayor que cero (0).");
+        } else {
+            saldos.put(usuarioActual, saldos.get(usuarioActual) + cantidad);
+            System.out.println("Deposito $" + cantidad + ". Saldo actual: $" + saldos.get(usuarioActual));
+        }
+    }
+}
 }
