@@ -92,7 +92,7 @@ public class banksuko {
             System.out.println("La cantidad debe ser mayor que cero (0).");
         } else {
             saldos.put(usuarioActual, saldos.get(usuarioActual) + cantidad);
-            System.out.println("Deposito $" + cantidad + ". Saldo actual : $" + saldos.get(usuarioActual));
+            System.out.println("Deposito $" + cantidad + ". Saldo actual: $" + saldos.get(usuarioActual));
         }
     }
 }
